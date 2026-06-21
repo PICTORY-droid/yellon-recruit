@@ -1,8 +1,8 @@
 import Link from "next/link";
 
+import { PublicFooter } from "@/app/(public)/_components/PublicFooter";
 import { PublicHeader } from "@/app/(public)/_components/PublicHeader";
 import { PublicPageShell } from "@/app/(public)/_components/PublicPageShell";
-import { BRAND } from "@/shared/config/brand";
 
 const comfortPoints = [
   {
@@ -173,7 +173,9 @@ export default function Home() {
               key={job.title}
               className="overflow-hidden rounded-[28px] border border-[#d4e8f8] bg-white shadow-[0_12px_28px_rgba(75,151,204,0.08)]"
             >
-              <div className={`${job.tone} flex items-center justify-between px-5 py-4`}>
+              <div
+                className={`${job.tone} flex items-center justify-between px-5 py-4`}
+              >
                 <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-black text-[#365d77]">
                   {job.label}
                 </span>
@@ -184,8 +186,12 @@ export default function Home() {
                 <h3 className="text-xl font-black tracking-[-0.04em] text-[#203c53]">
                   {job.title}
                 </h3>
-                <p className="mt-3 text-sm font-bold text-[#51708a]">{job.location}</p>
-                <p className="mt-2 text-sm font-medium text-[#71879a]">{job.detail}</p>
+                <p className="mt-3 text-sm font-bold text-[#51708a]">
+                  {job.location}
+                </p>
+                <p className="mt-2 text-sm font-medium text-[#71879a]">
+                  {job.detail}
+                </p>
 
                 <Link
                   href="/jobs"
@@ -218,10 +224,9 @@ export default function Home() {
         </Link>
       </section>
 
-      <footer className="mt-10 border-t border-[#cfe6f8] py-7 text-center text-sm font-medium leading-6 text-[#668197]">
-        <p className="font-black text-[#38698c]">{BRAND.serviceName}</p>
-        <p className="mt-1">{BRAND.footerNotice}</p>
-      </footer>
+      <div className="mt-10">
+        <PublicFooter />
+      </div>
     </PublicPageShell>
   );
 }
