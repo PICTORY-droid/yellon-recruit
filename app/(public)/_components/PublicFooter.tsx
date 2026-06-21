@@ -31,8 +31,17 @@ export function PublicFooter() {
             </Link>
 
             <p className="mt-3 text-sm font-medium leading-6 text-[#587187]">
-              {BRAND.operatorNotice}
+              공고 조건을 확인하고, 궁금한 점은 문의 접수로 남겨주세요.
+              <br />
+              확인 후 안내 가능한 방법으로 답변드립니다.
             </p>
+
+            <Link
+              href="/contact"
+              className="mt-4 inline-flex min-h-11 items-center justify-center rounded-2xl bg-[#e7f5ff] px-4 text-sm font-bold text-[#1e5f8f] transition hover:bg-[#d5eafb]"
+            >
+              문의 접수하기
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-x-10 gap-y-7 sm:grid-cols-3">
@@ -69,13 +78,18 @@ export function PublicFooter() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="text-sm font-bold text-[#1f3347]">문의</p>
-              <a
-                href={`mailto:${BRAND.contactEmail}`}
-                className="mt-3 block break-all text-sm font-medium text-[#2d9de8] transition-colors hover:text-[#1e5f8f]"
+              <p className="text-sm font-bold text-[#1f3347]">고객센터</p>
+              <p className="mt-3 text-sm font-medium leading-6 text-[#587187]">
+                문의 내용을 접수하면
+                <br />
+                확인 후 안내드립니다.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-3 inline-flex text-sm font-bold text-[#2d9de8] transition-colors hover:text-[#1e5f8f]"
               >
-                {BRAND.contactEmail}
-              </a>
+                문의 페이지로 이동
+              </Link>
             </div>
           </div>
         </div>
